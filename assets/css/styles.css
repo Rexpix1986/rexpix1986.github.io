@@ -1,0 +1,94 @@
+html, body {
+  background: var(--bs-black);
+}
+
+.fullscreen-div {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.bebas {
+  font-family: "Bebas Neue", sans-serif;
+  color: white;
+}
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  color: white;
+}
+
+#splash-title {
+  font-size: 4rem;
+}
+
+.nav-link {
+  color: #000000;
+  transition: color .3s;
+}
+
+.splash-link {
+  color: white;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  color: var(--bs-pink);
+}
+
+.advisor-name, .team-name {
+  margin-bottom: 0;
+  text-decoration: underline;
+  text-decoration-color: var(--bs-pink);
+  font-size: 1.1rem;
+}
+
+.navbar {
+  background: white;
+}
+
+.splash-bar {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (max-width: 576px) {
+  .splash-bar {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.splash-bg {
+}
+
+#background {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.bg-layer {
+  position: absolute;
+  min-width: 150vw;
+  translate: -12.5% -12.5%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 3s linear;
+  will-change: transform, opacity;
+}
+
+.bg-layer.current {
+  opacity: 1;
+}
+
+.advisor-bio {
+  margin-bottom: 2rem;
+}
+
