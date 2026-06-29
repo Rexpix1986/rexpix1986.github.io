@@ -1,10 +1,11 @@
-const images = [
-    "assets/img/splash-bgs/bg-pic-1.webp",
-    "assets/img/splash-bgs/bg-pic-2.webp",
-    "assets/img/splash-bgs/bg-pic-3.webp",
-    "assets/img/splash-bgs/bg-pic-4.webp",
-    "assets/img/splash-bgs/bg-pic-5.webp",
-]
+var images = [];
+let imageCount = 10;
+while (imageCount--) {
+    images.push("assets/img/splash-bgs/bg-pic-" + (imageCount + 1) + ".webp")
+};
+images = shuffle(images);
+console.log(images);
+
 
 const DISPLAY_TIME = 6000;
 const FADE_TIME = 3000;
@@ -92,6 +93,21 @@ function start() {
 
     setInterval(nextImage, DISPLAY_TIME);
 
+}
+
+function shuffle(array) {
+    // Create a shallow copy if you don't want to mutate the original array
+    const shuffled = [...array];
+
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        // Pick a random index from 0 to i
+        const j = Math.floor(Math.random() * (i + 1));
+
+        // Swap elements shuffled[i] and shuffled[j]
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+
+    return shuffled;
 }
 
 start();
