@@ -1,5 +1,5 @@
 var images = [];
-let imageCount = 10;
+let imageCount = 9;
 while (imageCount--) {
     images.push("assets/img/splash-bgs/bg-pic-" + (imageCount + 1) + ".webp")
 };
@@ -7,8 +7,8 @@ images = shuffle(images);
 console.log(images);
 
 
-const DISPLAY_TIME = 6000;
-const FADE_TIME = 3000;
+const DISPLAY_TIME = 12000;
+const FADE_TIME = 2000;
 const MOVE_TIME = DISPLAY_TIME + FADE_TIME;
 
 let currentIndex = 0;
@@ -66,6 +66,7 @@ function nextImage() {
     currentIndex = (currentIndex + 1) % images.length;
 
     next.src = images[currentIndex];
+    sizeImage(next);
     animateImage(next);
 
     requestAnimationFrame(() => {
@@ -89,10 +90,31 @@ function start() {
     current.src = images[0];
     current.classList.add("current");
 
+    sizeImage(current);
     animateImage(current);
 
     setInterval(nextImage, DISPLAY_TIME);
 
+}
+
+function sizeImage(img, overscan = 2) {
+    return;
+
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+
+    const viewportAspect = vw / vh;
+    const imageAspect = img.naturalWidth / img.naturalHeight;
+
+    if (viewportAspect > imageAspect) {
+        // Wide viewport (desktop/laptop)
+        img.style.minWidth = `${vw * overscan}px`;
+        img.style.height = "auto";
+    } else {
+        // Tall viewport (phone)
+        img.style.width = "auto";
+        img.style.minHeight = `${vh * overscan}px`;
+    }
 }
 
 function shuffle(array) {
