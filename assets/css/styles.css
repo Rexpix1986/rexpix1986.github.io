@@ -7,6 +7,16 @@ img {
   border-radius: 12px;
 }
 
+#rex-image {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  #rex-image {
+    width: 50%;
+  }
+}
+
 .fullscreen-div {
   width: 100vw;
   height: 100vh;
