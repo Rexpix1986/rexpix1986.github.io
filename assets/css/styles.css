@@ -7,6 +7,10 @@ img {
   border-radius: 12px;
 }
 
+.grid-image {
+  margin: 0;
+}
+
 #rex-image {
   width: 100%;
 }
