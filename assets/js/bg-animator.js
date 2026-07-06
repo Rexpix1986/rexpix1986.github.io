@@ -40,5 +40,5 @@ function animateImage() {
 
 }
 
-image.src = "clipsbackground.jpg";
+image.src = "assets/img/clipsbackground.jpg";
 image.onload = animateImage;
