@@ -31,7 +31,7 @@ function animateImage() {
         }
     ], {
         duration: MOVE_TIME,
-        easing: "ease-in-out",
+        easing: "ease",
         fill: "forwards"
     }).finished.then(() => {
         pose = next;
