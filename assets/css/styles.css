@@ -7,14 +7,14 @@ img {
   border-radius: 12px;
 }
 
-.bebas {
-  font-family: "Bebas Neue", sans-serif;
-  color: white;
-}
-
 .montserrat {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
+  color: white;
+}
+
+.bebas {
+  font-family: "Bebas Neue", sans-serif;
   color: white;
 }
 
